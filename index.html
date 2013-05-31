@@ -68,6 +68,103 @@
     <header>
       
         <div class="icon depth"></div>
+        <time class="depth" datetime="2013-05-31T06:29:39.000Z"><a href="/2013/05/to-learn-html5-javascript/">May 31 2013</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2013/05/to-learn-html5-javascript/">HTML5&amp;Javascript学习</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>这几天在写Web客户端课程项目，也就是做个围棋游戏吧。因为不想写后端，所以就想把前端写得cool一点。  </p>
+<p>为了各种动画效果，所以整个棋盘都是用HTML5的canvas给画出来的。画这种东西其实还是比较方便的，几个矩形一堆线条就搞定了。但在学canvas的时候，发现网上教程大多是用clearRect方法来擦除canvas进行重新绘制来达到动画效果。但我实际使用，效果非常差。不知道clearRect具体是如何实现的，貌似是擦除以后填充透明元素，反正我用起来感觉是在原来的canvas上重新绘制，非常浪费资源，cpu占用有点高。后来我无意中发现，其实想要重置一个canvas，直接重新设置一下它的尺寸，也就是长宽属性就好了。这相当于重新给你new了一个canvas的感觉，相当便捷省资源，直接新的canvas上重画就好了。至少我目前使用来说，还没发现什么不好的地方，先这么用着吧。  </p>
+<p>这两天学Javascript也被它的对象弄得狼狈。“类”的几种声明方式什么的就算了，我被一个作用域的问题纠结了很久（果然是我弱爆了）。  </p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Test</span><span class="params">()</span>{</span>
+    <span class="keyword">this</span>.a = <span class="number">0</span>;
+
+    <span class="keyword">this</span>.callA = <span class="keyword">function</span>(){
+        <span class="keyword">if</span>(<span class="keyword">this</span>.a&gt;<span class="number">2</span>)
+            <span class="keyword">return</span>;
+        alert(<span class="keyword">this</span>.a);
+        <span class="keyword">this</span>.a++;
+    };
+
+    <span class="keyword">this</span>.call = <span class="keyword">function</span>(){
+        setInterval(<span class="keyword">this</span>.callA(), <span class="number">100</span>);
+    };
+}
+
+<span class="keyword">var</span> test = <span class="keyword">new</span> Test();
+test.call();
+</code></pre>
+<p>比如上面这段代码，我是想在通过setInterval执行3次callA方法，用Test的成员a来控制次数。但实际运行就会发现，在用setInterval执行this.callA()的时候，是找不到this.a这个类变量的。原因很简单，debug的时候就会发现，实际执行到callA()里时，this.a是找不到的，this已经指向了window。在网上我看教程是说是因为this是动态晚绑定的，按我的理解就是this是指向最近的一层对象。  </p>
+<p>解决这个问题的方法好像很多，有用命名空间的，看起来比较美。但我图简单，用的是下面这种。  </p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Test</span><span class="params">()</span>{</span>
+    <span class="keyword">this</span>.a = <span class="number">0</span>;
+
+    <span class="keyword">this</span>.callA = <span class="keyword">function</span>(){
+        <span class="keyword">if</span>(<span class="keyword">this</span>.a&gt;<span class="number">2</span>)
+            <span class="keyword">return</span>;
+        alert(<span class="keyword">this</span>.a);
+        <span class="keyword">this</span>.a++;
+    };
+
+    <span class="keyword">this</span>.call = <span class="keyword">function</span>(){
+        tmp = <span class="keyword">this</span>;
+        setInterval(<span class="string">"tmp.callA()"</span>, <span class="number">100</span>);
+    };
+}
+
+<span class="keyword">var</span> test = <span class="keyword">new</span> Test();
+test.call();
+</code></pre>
+<p>也就是先用一个全局变量存下当前这个对象的this，然后用碉堡了的eval给setInterval，这里要切记加引号。  </p>
+<p>参考：  </p>
+<p><a href="http://www.cnblogs.com/sparon/archive/2011/04/26/2029268.html">关于setInterval调用对象方法的问题</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/05/to-learn-html5-javascript/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+  
+  <div class="archive">
+    
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2013/05/to-learn-html5-javascript/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2013/05/to-learn-html5-javascript/">HTML5&amp;Javascript学习</a></h2>
+            
+            <time class="time title depth" datetime="2013-05-31T06:29:39.000Z"><a href="/2013/05/to-learn-html5-javascript/">May 31 2013</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+  
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
         <time class="depth" datetime="2013-05-27T17:35:05.000Z"><a href="/2013/05/d2-workshop/">May 28 2013</a></time>
       
       
@@ -495,11 +592,19 @@
   
     <li><a href="/tags/GFW/">GFW</a><small>1</small></li>
   
+    <li><a href="/tags/HTML5/">HTML5</a><small>1</small></li>
+  
     <li><a href="/tags/Hexo/">Hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/Javascript/">Javascript</a><small>1</small></li>
+  
+    <li><a href="/tags/Learn/">Learn</a><small>1</small></li>
   
     <li><a href="/tags/Life/">Life</a><small>4</small></li>
   
     <li><a href="/tags/Tech/">Tech</a><small>2</small></li>
+  
+    <li><a href="/tags/前端/">前端</a><small>1</small></li>
   
     <li><a href="/tags/折腾/">折腾</a><small>1</small></li>
   

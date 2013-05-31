@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>折腾 | tzwm Blog</title>
+  <title>HTML5 | tzwm Blog</title>
   <meta name="author" content="tzwm">
   
   
@@ -62,7 +62,7 @@
  --></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignright"><div id="wrapper">
-<h2 class="archive-title tag">折腾</h2>
+<h2 class="archive-title tag">HTML5</h2>
 
 
   
@@ -72,44 +72,61 @@
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2013-03-06T14:54:10.000Z"><a href="/2013/03/install-ubuntu-12.10/">Mar 6 2013</a></time>
+        <time class="depth" datetime="2013-05-31T06:29:39.000Z"><a href="/2013/05/to-learn-html5-javascript/">May 31 2013</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2013/03/install-ubuntu-12.10/">Ubuntu12.10折騰感受</a></h1>
+    <h1 class="title depth"><a href="/2013/05/to-learn-html5-javascript/">HTML5&amp;Javascript学习</a></h1>
   
 
     </header>
     <div class="entry depth">
       
-        <h2>緣由</h2>
-<p>直接原因大概是因爲寒假需要有操作系統項目要寫，其實就是根據書一步步自己動手寫操作系統，這種東西顯然是要在Linux環境下比較方便的，而且書上用的虛擬機也是bochs，所以我就考慮裝個Linux了。 根本原因是我一直以來的理想狀態都是Win下娛樂，Linux下工作。從初中開始就各種嘗試Linux，作爲一個程序猿也是正常現象。但一直以來嘗試過真是安裝、wubi的那種虛擬安裝，再到後來裝在虛擬機里，總是感覺體驗不太好，另一方面也是依然受Win的影響，還有就是那時候的不成熟。 現在也都大二這麼老了，折騰了這麼多年，我覺得也差不多了，是要開始穩定下來使用了，再不用，就沒時間了，故決定真是安裝了，其實本來就沒什麼好擔心的……</p>
-<h2>發行版和桌面環境的選擇</h2>
-<p>最初是想用ArchLinux的，但想到曾經的折騰經歷，還有寒假緊張的時間，也就放棄了，打算在開學以後再重新折騰上就是了。 Fedora，CentOS, openSUSE這些都不是很熟，最後就還是選擇了Ubuntu12.10，簡單方便。 Ubuntu12.10自帶的Unity其實我感覺還過得去，所以我也就懶得換xfce之類的了，倒是考慮用awesome，裝上後不會用，決定開學後再熟悉。  </p>
-<h2>安裝</h2>
-<p>我装系统向来都是把ISO刻在U盘上，然后从U盘启动安装，但Ubuntu安装的时候却进不去，不知为何，最后是刻盘安装的。 因为是真实安装，同时要保存我依然很爱的Win8，所以我特意腾出一个主分区来装Linux。 具体安装步骤没什么好说的，唯一想说的是最好离线安装，安装好以后再换更新源去更新，避免安装的时候用默认的源以非常慢的速度更新浪费时间。记得之前高中的时候在机房装，都是拔网线来装的。</p>
-<h2>软件</h2>
-<ol>
-<li>chrome——这是必须的，已经完全离不开这个，相当于我大半个系统了。如果将来Chrome OS统治世界我也不会感到奇怪的。</li>
-<li>GoldonDict——词典软件，对我来说是必须的，可以上stardict下词典</li>
-<li>Gvim——相比自带的vi，还是有必要装一个的</li>
-<li>Tweak Tool——改些配置</li>
-<li>Rime——输入法，很赞</li>
-<li>开发环境</li>
-<li>后面需要什么装什么了</li>
-<li>自带的东西太多，各种卸载</li>
-</ol>
-<h2>折腾</h2>
-<ol>
-<li>其实驱动什么的基本还是没有问题，但我还是去尝试安装了N卡的官方驱动，最后失败，后来我干脆把独显禁掉省电</li>
-<li>最大的问题是我的亮度问题，始终是保持最大亮度无法调节，在网上搜了很久，试了各种办法，但一直没法解决，导致我整个寒假，晚上都不太敢用Ubuntu，觉得太伤眼了。结果就在昨天，我无意中又试了一次其中的一个方法，居然解决了，真是泪流满面。解决方法是修改grup。
- GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; 修改为 
- GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash acpi_osi=Linux&quot;</li>
-</ol>
-<h2>吐槽</h2>
-<p>每次开机总是要靠RP的感觉，有时开机会给我蹦出低显示模式下运行，然后tty7就崩了，比较蛋疼，还好机率不高。 因为各种折腾，各种崩溃，各种重装的经历，我心里总是会觉得Ubuntu不稳定，随时会崩的感觉，所以各种不放心，用windows我就从没这种感觉，大概是心理作用吧。囧</p>
-<h2>感想</h2>
-<p>经过寒假还有开学这两周的使用，基本开发环境等都已经完全配好，现在基本上每天一直是混在Ubuntu下，已经很少进Windows。 说实话，我依然觉得Windows的图形界面甩Linux好几条街，平常使用我也觉得还是Windows比较好用，但做开发的话，Linux还是方便一点，这也是我目前打算长期使用的主要原因。</p>
+        <p>这几天在写Web客户端课程项目，也就是做个围棋游戏吧。因为不想写后端，所以就想把前端写得cool一点。  </p>
+<p>为了各种动画效果，所以整个棋盘都是用HTML5的canvas给画出来的。画这种东西其实还是比较方便的，几个矩形一堆线条就搞定了。但在学canvas的时候，发现网上教程大多是用clearRect方法来擦除canvas进行重新绘制来达到动画效果。但我实际使用，效果非常差。不知道clearRect具体是如何实现的，貌似是擦除以后填充透明元素，反正我用起来感觉是在原来的canvas上重新绘制，非常浪费资源，cpu占用有点高。后来我无意中发现，其实想要重置一个canvas，直接重新设置一下它的尺寸，也就是长宽属性就好了。这相当于重新给你new了一个canvas的感觉，相当便捷省资源，直接新的canvas上重画就好了。至少我目前使用来说，还没发现什么不好的地方，先这么用着吧。  </p>
+<p>这两天学Javascript也被它的对象弄得狼狈。“类”的几种声明方式什么的就算了，我被一个作用域的问题纠结了很久（果然是我弱爆了）。  </p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Test</span><span class="params">()</span>{</span>
+    <span class="keyword">this</span>.a = <span class="number">0</span>;
+
+    <span class="keyword">this</span>.callA = <span class="keyword">function</span>(){
+        <span class="keyword">if</span>(<span class="keyword">this</span>.a&gt;<span class="number">2</span>)
+            <span class="keyword">return</span>;
+        alert(<span class="keyword">this</span>.a);
+        <span class="keyword">this</span>.a++;
+    };
+
+    <span class="keyword">this</span>.call = <span class="keyword">function</span>(){
+        setInterval(<span class="keyword">this</span>.callA(), <span class="number">100</span>);
+    };
+}
+
+<span class="keyword">var</span> test = <span class="keyword">new</span> Test();
+test.call();
+</code></pre>
+<p>比如上面这段代码，我是想在通过setInterval执行3次callA方法，用Test的成员a来控制次数。但实际运行就会发现，在用setInterval执行this.callA()的时候，是找不到this.a这个类变量的。原因很简单，debug的时候就会发现，实际执行到callA()里时，this.a是找不到的，this已经指向了window。在网上我看教程是说是因为this是动态晚绑定的，按我的理解就是this是指向最近的一层对象。  </p>
+<p>解决这个问题的方法好像很多，有用命名空间的，看起来比较美。但我图简单，用的是下面这种。  </p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Test</span><span class="params">()</span>{</span>
+    <span class="keyword">this</span>.a = <span class="number">0</span>;
+
+    <span class="keyword">this</span>.callA = <span class="keyword">function</span>(){
+        <span class="keyword">if</span>(<span class="keyword">this</span>.a&gt;<span class="number">2</span>)
+            <span class="keyword">return</span>;
+        alert(<span class="keyword">this</span>.a);
+        <span class="keyword">this</span>.a++;
+    };
+
+    <span class="keyword">this</span>.call = <span class="keyword">function</span>(){
+        tmp = <span class="keyword">this</span>;
+        setInterval(<span class="string">"tmp.callA()"</span>, <span class="number">100</span>);
+    };
+}
+
+<span class="keyword">var</span> test = <span class="keyword">new</span> Test();
+test.call();
+</code></pre>
+<p>也就是先用一个全局变量存下当前这个对象的this，然后用碉堡了的eval给setInterval，这里要切记加引号。  </p>
+<p>参考：  </p>
+<p><a href="http://www.cnblogs.com/sparon/archive/2011/04/26/2029268.html">关于setInterval调用对象方法的问题</a></p>
 
       
     </div>
@@ -117,7 +134,7 @@
       
         
           <div class="alignleft">
-            <a href="/2013/03/install-ubuntu-12.10/#more" class="more-link">Read More</a>
+            <a href="/2013/05/to-learn-html5-javascript/#more" class="more-link">Read More</a>
           </div>
         
         
