@@ -12,48 +12,49 @@ tags: [前端, Learn, HTML5, Javascript]
 这两天学Javascript也被它的对象弄得狼狈。“类”的几种声明方式什么的就算了，我被一个作用域的问题纠结了很久（果然是我弱爆了）。  
 
 {% highlight javascript %}
-	function Test(){
-	    this.a = 0;
-	
-	    this.callA = function(){
-	        if(this.a>2)
-	            return;
-	        alert(this.a);
-	        this.a++;
-	    };
-	    
-	    this.call = function(){
-	        setInterval(this.callA(), 100);
-	    };
-	}
-	
-	var test = new Test();
-	test.call();
-{% endhighlight %}
+function Test(){
+    this.a = 0;
 
+    this.callA = function(){
+        if(this.a>2)
+            return;
+        alert(this.a);
+        this.a++;
+    };
+    
+    this.call = function(){
+        setInterval(this.callA(), 100);
+    };
+}
+
+var test = new Test();
+test.call();
+{% endhighlight %}
 
 比如上面这段代码，我是想在通过setInterval执行3次callA方法，用Test的成员a来控制次数。但实际运行就会发现，在用setInterval执行this.callA()的时候，是找不到this.a这个类变量的。原因很简单，debug的时候就会发现，实际执行到callA()里时，this.a是找不到的，this已经指向了window。在网上我看教程是说是因为this是动态晚绑定的，按我的理解就是this是指向最近的一层对象。  
 
 解决这个问题的方法好像很多，有用命名空间的，看起来比较美。但我图简单，用的是下面这种。  
 
-	function Test(){
-	    this.a = 0;
-	
-	    this.callA = function(){
-	        if(this.a>2)
-	            return;
-	        alert(this.a);
-	        this.a++;
-	    };
-	    
-	    this.call = function(){
-	        tmp = this;
-	        setInterval("tmp.callA()", 100);
-	    };
-	}
-	
-	var test = new Test();
-	test.call();
+{% highlight javascript %}
+function Test(){
+    this.a = 0;
+
+    this.callA = function(){
+        if(this.a>2)
+            return;
+        alert(this.a);
+        this.a++;
+    };
+    
+    this.call = function(){
+        tmp = this;
+        setInterval("tmp.callA()", 100);
+    };
+}
+
+var test = new Test();
+test.call();
+{% endhighlight %}
 
 也就是先用一个全局变量存下当前这个对象的this，然后用碉堡了的eval给setInterval，这里要切记加引号。  
 
