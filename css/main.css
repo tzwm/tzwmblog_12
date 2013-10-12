@@ -5,6 +5,11 @@
 /*****************************************************************************/
 
 /* Global Reset */
+
+@import url(http://fonts.googleapis.com/css?family=Galdeano);
+@import url(http://fonts.googleapis.com/css?family=Electrolize);
+@import url(http://fonts.googleapis.com/css?family=Cuprum);
+
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +19,9 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
+  /*font: 14px Helvetica, Arial, sans-serif;*/
+  font-size: 14px;
+  font-family:"Galdeano","Hiragino Sans GB","Microsoft YaHei",Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
   text-align: center;
 }
 
@@ -29,11 +35,23 @@ a         { color: #00a; }
 a:hover   { color: #000; }
 a:visited { color: #a0a; }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+    text-decoration:none;
+}
+
 /*****************************************************************************/
 /*
 /* Home
 /*
 /*****************************************************************************/
+
+.post a:link {color: #FF0000;}
+.post a:visited {color: #FF0000;}
+
 ul.posts {
   list-style-type: none;
   margin-bottom: 2em;
@@ -56,11 +74,17 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
+    /*border: 2px solid #000000;*/
   font-size: 115%;
   text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
+  width: 600px;
+  /*margin: 3em auto 2em;*/
+  margin: 3em auto;
   line-height: 1.5em;
+}
+
+.site .header {
+    border-bottom: 1px #000;
 }
 
 .site .header a {
@@ -68,9 +92,11 @@ ul.posts span {
   text-decoration: none;
 }
 
-.site .header h1.title {
+.site .header .title {
   display: inline-block;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+    font-size: 2em;
+    font-family:"Electrolize",sans-serif;
 }
 
 .site .header h1.title a {
@@ -81,10 +107,10 @@ ul.posts span {
   color: #000;
 }
 
-.site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
+/*.site .header a.extra {*/
+  /*color: #aaa;*/
+  /*margin-left: 1em;*/
+/*}*/
 
 .site .header a.extra:hover {
   color: #000;
@@ -121,11 +147,22 @@ ul.posts span {
   border: 0;
 }
 
+.site a:link {color:#000000;}
+.site a:visited {color:#000000;}
+
 /*****************************************************************************/
 /*
 /* Posts
 /*
 /*****************************************************************************/
+
+h2.post {
+    font-size: 1.5em;
+}
+
+p.meta {
+    margin-top:0.5em;
+}
 
 /* standard */
 .post pre {
@@ -158,3 +195,33 @@ ul.posts span {
 .post pre.terminal code {
   background-color: #333;
 }
+
+/*****************************************************************************/
+/*
+/* nav 
+/*
+/*****************************************************************************/
+
+.navbar {
+    float: left;
+    text-align: right;
+    margin-left: -5.4em;
+    width: 4em;
+    /*border: 1px solid #000000;*/
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-family:"Electrolize",sans-serif;
+}
+
+.navbar li {
+    padding-bottom: 0.6em;
+}
+
+.navbar a:link {
+    color: #a00;
+}
+.navbar a:visited {
+    color: #a00;
+}
+
+   
