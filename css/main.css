@@ -206,7 +206,7 @@ p.meta {
     float: left;
     text-align: right;
     margin-left: -5.4em;
-    width: 4em;
+    /*width: 4em;*/
     /*border: 1px solid #000000;*/
     font-size: 1.4em;
     text-transform: uppercase;
