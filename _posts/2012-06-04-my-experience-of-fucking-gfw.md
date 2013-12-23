@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 俺的爬墙史 --写在1264
+title: 我的爬墙史 --写在1264
 date: 2012-06-04 22:24:02
 tags: [GFW, Tech, Life]
 ---
