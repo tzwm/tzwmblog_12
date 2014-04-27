@@ -1,9 +1,10 @@
-<!------->
-<!--layout: post-->
-<!--title:  "Rails学习——软件工程课程项目&Rails小组总结"-->
-<!--date:   2013-12-22 15:48:08-->
-<!--categories: Ruby Rails -->
-<!------->
+---
+layout: post
+title: "GC活动——Rails小组总结"
+date: 2013-12-22 15:48:08
+tags: [Ruby on Rails, Learn, Life]
+---
+
 
 下面是我最后发的一封Rails小组的活动总结邮件，话唠了太多。
 
