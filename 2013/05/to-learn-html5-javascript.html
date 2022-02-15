@@ -17,14 +17,14 @@
 
         <div class="site">
           <div class="header">
-            <h1 class="title"><a href="/">tzwm Blog</a></h1>
+            <h1 class="title"><a href="/">tzwm's Blog</a></h1>
           </div>
 
           <div class="navbar">
               <ul>
                   
                   <li><span>
-                      <a href="/index.html">home </a>
+                      <a href="/">home </a>
                   </span></li>
                   
 
@@ -35,13 +35,13 @@
 <p class="meta">31 May 2013</p>
 
 <div class="post">
-<p>这几天在写Web客户端课程项目，也就是做个围棋游戏吧。因为不想写后端，所以就想把前端写得cool一点。  </p>
+<p>这几天在写Web客户端课程项目，也就是做个围棋游戏吧。因为不想写后端，所以就想把前端写得cool一点。</p>
 
-<p>为了各种动画效果，所以整个棋盘都是用HTML5的canvas给画出来的。画这种东西其实还是比较方便的，几个矩形一堆线条就搞定了。但在学canvas的时候，发现网上教程大多是用clearRect方法来擦除canvas进行重新绘制来达到动画效果。但我实际使用，效果非常差。不知道clearRect具体是如何实现的，貌似是擦除以后填充透明元素，反正我用起来感觉是在原来的canvas上重新绘制，非常浪费资源，cpu占用有点高。后来我无意中发现，其实想要重置一个canvas，直接重新设置一下它的尺寸，也就是长宽属性就好了。这相当于重新给你new了一个canvas的感觉，相当便捷省资源，直接新的canvas上重画就好了。至少我目前使用来说，还没发现什么不好的地方，先这么用着吧。  </p>
+<p>为了各种动画效果，所以整个棋盘都是用HTML5的canvas给画出来的。画这种东西其实还是比较方便的，几个矩形一堆线条就搞定了。但在学canvas的时候，发现网上教程大多是用clearRect方法来擦除canvas进行重新绘制来达到动画效果。但我实际使用，效果非常差。不知道clearRect具体是如何实现的，貌似是擦除以后填充透明元素，反正我用起来感觉是在原来的canvas上重新绘制，非常浪费资源，cpu占用有点高。后来我无意中发现，其实想要重置一个canvas，直接重新设置一下它的尺寸，也就是长宽属性就好了。这相当于重新给你new了一个canvas的感觉，相当便捷省资源，直接新的canvas上重画就好了。至少我目前使用来说，还没发现什么不好的地方，先这么用着吧。</p>
 
-<p>这两天学Javascript也被它的对象弄得狼狈。“类”的几种声明方式什么的就算了，我被一个作用域的问题纠结了很久（果然是我弱爆了）。  </p>
+<p>这两天学Javascript也被它的对象弄得狼狈。“类”的几种声明方式什么的就算了，我被一个作用域的问题纠结了很久（果然是我弱爆了）。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Test</span><span class="p">(){</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Test</span><span class="p">(){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">callA</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
@@ -57,13 +57,13 @@
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Test</span><span class="p">();</span>
-<span class="nx">test</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span></code></pre></div>
+<span class="nx">test</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span></code></pre></figure>
 
-<p>比如上面这段代码，我是想在通过setInterval执行3次callA方法，用Test的成员a来控制次数。但实际运行就会发现，在用setInterval执行this.callA()的时候，是找不到this.a这个类变量的。原因很简单，debug的时候就会发现，实际执行到callA()里时，this.a是找不到的，this已经指向了window。在网上我看教程是说是因为this是动态晚绑定的，按我的理解就是this是指向最近的一层对象。  </p>
+<p>比如上面这段代码，我是想在通过setInterval执行3次callA方法，用Test的成员a来控制次数。但实际运行就会发现，在用setInterval执行this.callA()的时候，是找不到this.a这个类变量的。原因很简单，debug的时候就会发现，实际执行到callA()里时，this.a是找不到的，this已经指向了window。在网上我看教程是说是因为this是动态晚绑定的，按我的理解就是this是指向最近的一层对象。</p>
 
-<p>解决这个问题的方法好像很多，有用命名空间的，看起来比较美。但我图简单，用的是下面这种。  </p>
+<p>解决这个问题的方法好像很多，有用命名空间的，看起来比较美。但我图简单，用的是下面这种。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Test</span><span class="p">(){</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Test</span><span class="p">(){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">callA</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
@@ -75,14 +75,14 @@
     
     <span class="k">this</span><span class="p">.</span><span class="nx">call</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="nx">tmp</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-        <span class="nx">setInterval</span><span class="p">(</span><span class="s2">&quot;tmp.callA()&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+        <span class="nx">setInterval</span><span class="p">(</span><span class="dl">"</span><span class="s2">tmp.callA()</span><span class="dl">"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
     <span class="p">};</span>
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Test</span><span class="p">();</span>
-<span class="nx">test</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span></code></pre></div>
+<span class="nx">test</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span></code></pre></figure>
 
-<p>也就是先用一个全局变量存下当前这个对象的this，然后用碉堡了的eval给setInterval，这里要切记加引号。  </p>
+<p>也就是先用一个全局变量存下当前这个对象的this，然后用碉堡了的eval给setInterval，这里要切记加引号。</p>
 
 <p>====2013-12-18 Update=====</p>
 
@@ -102,9 +102,10 @@
 
 <p>最后，解决方案也很简单，网上的好像都是去判断是否加载完成。我因为这个图片加载并不是网页加载出来的时候就必要的，所以即时性并不是要求很高，所以直接在加载网页的时候定义了这个Image。这样，在之后用的时候，基本上也就加载完成了。其实，我感觉我这个方案虽然极其简单，但其实不是很好，我也就偷个懒了……</p>
 
-<p>参考：  </p>
+<p>参考：</p>
 
 <p><a href="http://www.cnblogs.com/sparon/archive/2011/04/26/2029268.html">关于setInterval调用对象方法的问题</a></p>
+
 
 </div>
 
@@ -129,7 +130,7 @@
             <div class="contact">
               <p>
                 Samwise Wang<br />
-                wangjunzhe4444@gmail.com
+                blog12@tzwm.me
               </p>
             </div>
             <div class="contact">
