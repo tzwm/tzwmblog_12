@@ -1,5 +1,5 @@
-name: tzwm Blog 
-markdown: redcarpet
+name: tzwm's Blog
+#markdown: redcarpet
 pygments: true
 
 permalink: /:year/:month/:title
